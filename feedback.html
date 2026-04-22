@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        /* Apply background image to the body */
+        body {
+            background-image: url('college.jpg.jpeg'); /* Replace with your image URL */
+            background-size: cover; /* Make the image cover the entire page */
+            background-position: center; /* Center the background image */
+            background-attachment: fixed; /* Make the background fixed during scrolling */
+            font-family: Arial, sans-serif;
+            color: white; /* Text color */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+            border-radius: 10px;
+            margin-top: 50px; /* To give space from top */
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #response-message {
+            text-align: center;
+            margin-top: 20px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Feedback Form</h1>
+        <form id="feedback-form">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+                   <div class="form-group">
+                <label for="grievances">Grievances</label>
+                <select name="option">
+                    <option value="">Select issues</option>
+                     <option value="1">Ragging</option>
+                      <option value="2">Sexual Harassment</option>
+                       <option value="3">Drugs</option>
+                        <option value="4">Water Scarcity</option>
+                         <option value="5">Restroom facilities</option>
+                          <option value="6">Pantry</option>
+                           <option value="7">infrastructure</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="feedback">Feedback:</label>
+                <textarea id="feedback" name="feedback" rows="4" required></textarea>
+            </div>   
+            <div class="form-group">
+                <label for="rating">Rating:</label>
+                <select id="rating" name="rating" required>
+                    <option value="">Select Rating</option>
+                    <option value="1">1 - Very Bad</option>
+                    <option value="2">2 - Bad</option>
+                    <option value="3">3 - Okay</option>
+                    <option value="4">4 - Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+            </div>
+
+            <button type="submit" id="submit-button">Submit Feedback</button>
+        </form>
+
+        <div id="response-message" class="hidden">
+            <p>Your feedback has been submitted. Thank you!</p>
+        </div>
+    </div>
+
+    <script>
+        // Add JavaScript for form submission behavior
+        document.getElementById('feedback-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents the form from submitting the usual way
+
+            // Show the response message
+            document.getElementById('response-message').classList.remove('hidden');
+
+            // Optionally reset the form after submission
+            document.getElementById('feedback-form').reset();
+        });
+    </script>
+</body>
+</html>
