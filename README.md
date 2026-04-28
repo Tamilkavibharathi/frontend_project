@@ -73,6 +73,6 @@ This project was built as part of my learning journey in frontend development.
 
 ## 📬 Contact
 
-
+Feel free to reach out or give feedback!
 
 ---
